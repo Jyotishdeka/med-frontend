@@ -1,84 +1,135 @@
-project:
-  name: SmartMedicare Frontend
-  description: |
-    This is the frontend React.js project for the SmartMedicare application — an online medicine ordering and doctor consultation platform. The backend is powered by Strapi, and API interactions are managed using Axios.
+# 🩺 SmartMedicare Frontend
 
-tech_stack:
-  - React.js (Vite)
-  - Tailwind CSS
-  - Redux Toolkit
-  - React Router DOM v6
-  - Axios
-  - Strapi (Headless CMS)
-  - AI Prescription Validation Service
+This is the **frontend React.js project** for the SmartMedicare application — an online platform for ordering medicines and booking doctor consultations. The backend is powered by **Strapi**, and we use **Axios** for handling API interactions. The project also integrates an **AI-powered prescription validation service**.
 
-folder_structure:
-  src:
-    - assets: "Images, icons, fonts"
-    - components:
-        - common: "Generic shared components"
-    - features:
-        - auth: "Auth feature (login, signup)"
-        - medicines: "Medicine listing, ordering"
-    - layouts: "Layout components"
-    - pages: "Route-level components"
-    - services: "Axios setup and API utilities"
-    - hooks: "Custom React hooks"
-    - store: "Redux store configuration"
-    - utils: "Helper functions"
-    - constants: "Constant values"
-    - styles: "Tailwind and global styles"
-    - App.jsx: "Main App component"
-    - main.jsx: "Entry point"
-    - routes.jsx: "All route definitions"
+---
 
-setup:
-  clone:
-    - git clone https://github.com/your-org/smartmedicare-frontend.git
-    - cd smartmedicare-frontend
-  install: npm install
-  environment:
-    file: .env
-    variables:
-      - VITE_API_BASE_URL=http://localhost:1337/api
-  run: npm run dev
-  preview_url: http://localhost:5173
+## 🔧 Tech Stack
 
-scripts:
-  - command: npm run dev
-    description: Run development server
-  - command: npm run build
-    description: Build for production
-  - command: npm run preview
-    description: Preview production build
-  - command: npm run lint
-    description: Lint the project
+- ⚛️ **React.js** (Vite)
+- 🎨 **Tailwind CSS**
+- 🧠 **Redux Toolkit**
+- 🌐 **React Router DOM v6**
+- 📦 **Axios**
+- 🗃️ **Strapi** (Headless CMS)
+- 🤖 **AI Prescription Validation Service**
 
-contributing_guide:
-  - Work only within your assigned feature folder inside `src/features/`.
-  - Use Axios from `services/axiosInstance.js`.
-  - Reusable components go in `components/common/`.
-  - Use Tailwind CSS for styling.
-  - Do not push to main branch directly. Create a feature branch and raise a pull request.
+---
 
-axios_usage_example: |
-  import axiosInstance from '@/services/axiosInstance';
+## 📁 Project Folder Structure
 
-  const fetchMedicines = async () => {
-    const res = await axiosInstance.get('/medicines');
-    return res.data;
-  };
+```bash
+src/
+├── assets/           # Images, icons, fonts
+├── components/       # Reusable UI components
+│   └── common/       # Generic shared components (Button, Card, etc.)
+├── features/         # Feature-based modules (UI + state + API)
+│   ├── auth/         # Auth feature (login, signup)
+│   └── medicines/    # Medicine listing, ordering
+├── layouts/          # Layout components (e.g., DashboardLayout)
+├── pages/            # Route-level components
+├── services/         # Axios setup and API utilities
+├── hooks/            # Custom React hooks
+├── store/            # Redux store configuration
+├── utils/            # Helper functions
+├── constants/        # Constant values and enums
+├── styles/           # Tailwind and global styles
+├── App.jsx           # Main App component
+├── main.jsx          # App entry point
+└── routes.jsx        # Route definitions
 
-tips:
-  - Use `useSelector` and `useDispatch` for Redux state.
-  - Break down pages into small components.
-  - Keep API and state logic inside feature folders.
 
-authors:
-  project_lead: Your Name
-  interns:
-    - Intern 1
-    - Intern 2
-    - Intern 3
+🚀 Getting Started
+1️⃣ Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-org/smartmedicare-frontend.git
+cd smartmedicare-frontend
+2️⃣ Install Dependencies
+bash
+Copy
+Edit
+npm install
+3️⃣ Setup Environment Variables
+Create a .env file in the root folder with the following:
 
-license: MIT © Your Company Name
+env
+Copy
+Edit
+VITE_API_BASE_URL=http://localhost:1337/api
+Replace with your actual Strapi backend URL if running in production.
+
+4️⃣ Run the Development Server
+bash
+Copy
+Edit
+npm run dev
+Visit: http://localhost:5173
+
+📜 NPM Scripts
+Command	Description
+npm run dev	Start development server
+npm run build	Create production build
+npm run preview	Preview production locally
+npm run lint	Lint the codebase (optional)
+
+📂 Feature Folder Guidelines
+Each feature lives in its own folder under src/features/. This folder contains:
+
+React components for that feature.
+
+Redux slice for state management.
+
+API file for handling backend requests.
+
+Example: src/features/medicines/
+
+MedicinesPage.jsx – UI
+
+medicinesSlice.js – Redux state
+
+medicinesAPI.js – Axios calls
+
+🔗 Axios Usage (Example)
+Use the shared axiosInstance from services/axiosInstance.js:
+
+js
+Copy
+Edit
+import axiosInstance from '@/services/axiosInstance';
+
+const fetchMedicines = async () => {
+  const res = await axiosInstance.get('/medicines');
+  return res.data;
+};
+🤝 Intern Contribution Guidelines
+✅ Do:
+
+Work only in your assigned feature folder inside src/features/.
+
+Use the global Axios instance from services/axiosInstance.js.
+
+Place shared components inside components/common/.
+
+Use Tailwind CSS only — no external or inline styles.
+
+Commit to a feature branch and raise a pull request.
+
+🚫 Don’t:
+
+Push directly to the main branch.
+
+Write duplicate components across features.
+
+Leave unused imports or commented code in production commits.
+
+💡 Pro Tips
+Use useSelector and useDispatch from Redux Toolkit to manage global state.
+
+Organize your feature code: separate UI, API, and logic.
+
+Use custom hooks from the hooks/ folder when reusable logic is needed.
+
+Keep your components small and focused.
+
