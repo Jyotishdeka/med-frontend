@@ -41,29 +41,19 @@ src/
 
 🚀 Getting Started
 1️⃣ Clone the Repository
-bash
-Copy
-Edit
 git clone https://github.com/your-org/smartmedicare-frontend.git
 cd smartmedicare-frontend
+
 2️⃣ Install Dependencies
-bash
-Copy
-Edit
 npm install
+
 3️⃣ Setup Environment Variables
 Create a .env file in the root folder with the following:
 
-env
-Copy
-Edit
 VITE_API_BASE_URL=http://localhost:1337/api
 Replace with your actual Strapi backend URL if running in production.
 
 4️⃣ Run the Development Server
-bash
-Copy
-Edit
 npm run dev
 Visit: http://localhost:5173
 
@@ -94,9 +84,6 @@ medicinesAPI.js – Axios calls
 🔗 Axios Usage (Example)
 Use the shared axiosInstance from services/axiosInstance.js:
 
-js
-Copy
-Edit
 import axiosInstance from '@/services/axiosInstance';
 
 const fetchMedicines = async () => {
